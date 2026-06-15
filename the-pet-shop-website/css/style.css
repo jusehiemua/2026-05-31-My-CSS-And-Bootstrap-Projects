@@ -1,0 +1,357 @@
+/*Import link for the Roboto Font from fonts.google.com*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*Import link for the Mukta font from fonts.google.com*/
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+body{
+    background-color: white;
+   overflow-x: hidden; /*Hides the bottom left-right scroll bar when elements stretch beyond the screen border*/
+}
+
+/* NAVBAR*/
+
+/*
+nav{
+    background-color: #333;
+    overflow: hidden;
+}*/
+
+li{
+    display: inline;
+    /*list-style-type: none;*/
+    padding: 5px;
+}
+/*
+a{
+    font-family: Arial, Helvetica, sans-serif;
+}
+*/
+a{
+    font-family:'Roboto', sans-serif; /*Font from fonts.google.com*/
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 1px .5px 4px rgba(46, 31, 31, 0.5);
+    color: white;
+    text-decoration: none;/* Removes the default link styling*/
+}
+
+
+a:hover{
+    color: #d7eaf7; /* Changes the color of the anchor element when a user hovers their mouse over it
+    text-shadow: 1px .5px 4px rgba(46, 31, 31, 0.8);
+    transition: all 0.3s ease; /* Smooth transition for the hover effect*/
+}
+
+.nav-bar{
+    background-color: #216391;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*The following minus margins stretch the navbar background beyong the web browser screen edge*/
+    margin-top: -8px;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: sticky; /*Create a sticky element that stays in the same spot in the browser screen*/
+    top: 0; /*Tells the browser to stick the element at the top of the page based on the user scrolling*/
+    z-index: 9; /*Sets the stack layer of the navbar to scroll over all elements*/
+    
+}
+
+/* Creats a line under the Home and Contact links to separate them from the images links*/
+#nav-border{
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffffff;
+
+}
+
+/*HEADERS*/
+h1, h2, h3{
+    color: #0a3f63;
+    text-align: center;
+    font-family:'Mukta', sans-serif; /*Font from fonts.google.com*/
+    text-shadow: 1px .5px 4px rgba(0, 0, 0, 0.5);
+    margin: 0px;
+
+    /*color: white;
+    text-decoration: none;/* Removes the default link styling*/
+
+}
+
+/*
+blockquote{
+    font-family:'Mukta', sans-serif; /*Font from fonts.google.com*
+    font-size: 18px;
+    color: #0a3f63;
+    text-shadow: 1px .5px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 20px auto; /*Adds space above and below the blockquote and centers it horizontally*
+    max-width: 600px; /*Limits the width of the blockquote for better readability*
+}
+*/
+
+h1{
+    font-size: 60px;
+    margin-top: 50px;
+}
+
+h2{
+    font-size: 45px;
+    margin-top: 20px;
+}
+
+h3{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#contact-h3{
+    text-shadow: none;
+}
+
+/* Creates a text color change animation on the h1 tags for the home and contact page headers*/
+@keyframes color-text{
+    0% { color: #b5e1ff; }
+    /*25% { color: #0a3f63; }*/
+    100% { color: #0a3f63; }
+}
+
+/* Calls the animation by it's name in a CSS seletor so it can be applied to a specific HTML element*/
+.animate-text{
+    animation: color-text 4s ease-in-out; /*Animation name, duration, and easing function*/
+}
+
+/*BODY CONTENT*/
+imggg{
+    display: block;
+    margin: 20px auto; /*Centers the image and adds space above and below it*/
+    max-width: 100%; /*Ensures the image scales down on smaller screens*/
+    height: auto; /*Maintains the aspect ratio of the image*/
+    border-radius: 10px; /*Adds rounded corners to the images*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Adds a subtle shadow to the images*/
+}
+
+img{
+    width: 500px;
+    height: 350px;
+    border-radius: 10px; /*Adds rounded corners to the images*/
+    border: none; /*Removes the default border around images*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), /*Adds a subtle shadow to the images*/
+    0 6px 20px 0 rgba(0, 0, 0, 19); /*Adds a subtle shadow to the images*/
+}
+
+.column{
+    float: left;
+    width: 48%; /*Places the image side by side when the float property is used*/
+    padding: 10px; /*Adds space around the images*/
+    /*
+    display: flex;
+    justify-content: center; /*Centers the content horizontally within the column*
+    gap: 20px; /*Adds space between the images in the column*
+    flex-wrap: wrap; /*Allows the images to wrap to the next line on smaller screens*
+    */
+}
+
+/* Groups elements inside a div element together and focres any floating elements outside of the div under it with this class selector*/
+.container{
+    background-size: 100% !important;
+    margin: 0px -60px 50px -40px; /*Adds space below the container and stretches the background image beyong the screen edge*/
+    padding-top: 5px; /*Padding will add an inline space so the elements don't sit on the edge of the div*/
+    padding-bottom: 10px;
+}
+
+
+/* This is part of the .container class selector to format the elements to display in a table-like format*/
+.container::after{
+    content: "";
+    clear: both; /*Clears the float property so the elements don't sit next to each other*/
+    display: table;
+}
+
+/* Sets up the size of each div that holds an image so that image can be centred*/
+.image-container{
+    position: relative; /*Sets the position of the image container to relative so that the image can be positioned absolute within it*/
+    width: 500px;
+    margin: auto; /*Centers the image container*/
+    margin-bottom: 50px; /*Adds space below the image container*/
+}
+
+/* Sets the background color in each div with an image and specifies which ones by the use of the id names for each image*/
+#cat{
+    background-color: #d7eaf7;
+}
+
+#dog{
+    background-color: #c3e0c5;
+}
+
+#rabbit{
+    background-color: #c3e0c5;
+}
+
+#guineapig{
+    background-color: #d7eaf7;
+}
+#fish{
+    background-color: #d7eaf7;
+}
+#reptile{
+    background-color: #c3e0c5;
+}
+
+/* Sets up the properties for the overlay on each image*/
+.overlay{
+    position: absolute; /*Positions the overlay on top of the image*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 350px;
+    margin-top: 50px;
+    border-radius: 10px; /*Adds rounded corners to the overlay to match the image*/
+    background-color: rgba(0, 0, 0); /*Adds a semi-transparent black background to the overlay*/
+    opacity: 0; /*Makes the overlay invisible by default*/
+
+}
+
+/* The :hover pseudo-class triggersthe overlay class to 60% opacity when a user hovers their mouse over sn image*/
+.overlay:hover{
+    opacity: 0.6; /*Makes the overlay visible when a user hovers their mouse over it*/
+    transition: all 0.3s ease; /*Smooth transition for the hover effect*/
+}
+
+/* This selecctor targets the video on the page*/
+iframe{
+    display: table;
+    margin: auto; /*Centers the video and adds space above and below it*/
+    border-radius: 20px; /*Adds rounded corners to the video*/
+    border: none; /*Removes the default border around the video*/
+}
+
+/* Styles the div element that holds the video*/
+#video{
+    background-color: #c3e0c5;
+    padding-top: 5px; /*Padding will add an inline space so that the elements don't sit on the edge of the div*/
+    padding-bottom: 50px;
+}
+
+footer{
+    background-color: #216391;
+    margin-top: 50px;
+    /*Negative margins stretch the footer background beyond the web browser screen edge on the left and right*/
+    margin-right: -10px;
+    margin-left: -10px;
+    bottom: 0; /*Positions the footer at the bottom of the page*/
+}
+
+/* Styles the table elements within the footer tags*/
+footer table{
+    width: 100%; /*Makes the table take up the full width of the footer*/
+}
+
+td{
+    text-align: center; /*Centers the text within each table cell*/
+    width: 33.33%; /*Makes each table cell take up an equal width of the table. That is, we divide the three columns equally so that each column takes up 1/3 of the browser width*/
+    padding: 10px; /*Adds space around the text in each table cell*/            
+}
+
+/* Specifically styles the paragraph elements within the table data elements*/
+td p{
+    font-family:'Roboto', sans-serif; /*Font from fonts.google.com*/
+    color: rgb(255, 255, 255);
+}
+
+/* FORM CSS*/
+form{
+    padding: 15px; /*Adds space around the form elements*/
+    display: table;
+    margin: auto; /*Centers the form and adds space above and below it*/
+    background-color: #c3e0c5;   
+    border-radius: 10px; /*Adds rounded corners to the form*
+    /*
+    background-color: #c3e0c5;
+    border-radius: 10px; /*Adds rounded corners to the form*
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Adds a subtle shadow to the form*
+    */
+}
+
+input{
+    border: 2px solid rgb(165, 165, 165);
+    border-radius: 2px; /*Adds rounded corners to the input fields*/
+    padding: 1px; /*Adds space inside the input fields*/
+    margin: 10px 15px 10px 0; /*Adds space below each input field*/
+    font-size: 20px;
+    color:rgb(165, 165, 165);
+   transition: color 0.3s ease-out; /*Smooth transition for the focus effect*/
+}
+
+/* The :focus  pseudo-class is triggered when a user clicks on an input field (element)*/
+input:focus{
+    box-sizing: border-box;
+    border: 2px solid #0a3f63; /*Changes the border color of the input field when a user clicks on it*/
+    color: #000000;
+    transition: all 0.3s ease-in; /*Smooth transition for the focus effect*/
+    outline: none; /*Adds a default outline to the input field when it is focused*/
+}
+
+/* Styles the label tag on the Contact form*/
+label{
+    font-family: 'Roboto', sans-serif; /*Font from fonts.google.com*/
+    font-size: 20px;
+    margin: 10px;
+    color: #333;
+}
+
+/* The type selector for the textarea element for a userr to write a message*/
+textarea{
+    width: 100%; /*Makes the textarea take up the full width of its container*/
+    height: 200px; /*Sets a fixed height for the textarea*/
+    padding: 12px 20px; /*Adds space inside the textarea*/
+    box-sizing: border-box;
+    border: 3px solid rgb(165, 165, 165);
+    border-radius: 4px; /*Adds rounded corners to the textarea*/
+    background: #ffffff;
+    font-family: 'Roboto', sans-serif; /*Font from fonts.google.com*/
+    color:rgb(165, 165, 165);
+    font-size: 15px;
+    resize: both;
+     transition: color 0.3s ease-out; /*Smooth transition for the focus effect*/
+}
+
+/* Applies different styling to the textarea when users trigger the :focus pseudo-class by clicking on it*/
+textarea:focus{
+    box-sizing: border-box;
+    color: #000000;
+    border: 3px solid #0a3f63; /*Changes the border color of the textarea when a user clicks on it*/
+    transition: all 0.3s ease-in; /*Smooth transition for the focus effect*/
+    outline: none; /*Removes the default outline around the textarea when it is focused*/
+}
+
+/*Styles the submit button*/
+input[type="submit"], input[type="reset"]{
+    background-color: #0a3f63;
+    border: none; /*Removes the default border around the buttons*/
+    border-radius: 5px; /*Adds rounded corners to the buttons*/
+    font-family: 'Roboto', sans-serif; /*Font from fonts.google.com*/
+    font-size: 20px;
+    color: white;
+    padding: 16px 32px; /*Adds space inside the buttons*/
+    margin: 4px 2px;
+    cursor: pointer; /*Changes the cursor to a pointer when hovering over the buttons*/
+    float: right; /*Floats the buttons to the right of the form*/
+    transition: background-color 0.3s ease; /*Smooth transition for the hover effect*/
+}
+
+input[type="reset"]{
+    float: left; /*Floats the buttons to the right of the form*/
+    transition: background-color 0.3s ease; /*Smooth transition for the hover effect*/
+}
+
+/*Changes the background color of the submit and reset buttons when a user hovers over it*/
+/*
+input[type="submit"]:hover, input[type="reset"]:hover{
+    background-color: #000;
+}
+    */
+
+input[type="submit"]:hover, input[type="reset"]:hover{
+    background-color: #eb6200;
+}
